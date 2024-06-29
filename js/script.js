@@ -24,6 +24,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (includeNumbers) chars += numbers;
         if (includeSymbols) chars += symbols;
 
+        if (chars === "") {
+            createToast('error', 'fa-solid fa-circle-exclamation', 'Error', 'No character types selected for password');
+            return;
+        }
+
         var password = "";
         for (var i = 0; i < minLength; i++) {
             var randomIndex = Math.floor(Math.random() * chars.length);
@@ -86,20 +91,20 @@ document.addEventListener('DOMContentLoaded', function() {
         var context = canvas.getContext('2d');
         canvas.width = 400;
         canvas.height = 200;
-    
+
         context.fillStyle = '#ffffff';
         context.fillRect(0, 0, canvas.width, canvas.height);
-    
+
         context.fillStyle = '#000000';
         context.font = '20px monospace';
-    
+
         // Add the "Password for" text
         context.fillText("Password for: " + passwordFor, 10, 50);
-    
+
         // Add the password
         context.font = '30px monospace';
         context.fillText(password, 10, 100);
-    
+
         // Add the current date and time
         const now = new Date();
         const timeString = now.toLocaleDateString() + ' ' + now.toLocaleTimeString();
