@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator || H.M.YOUSUF</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="notifications"></div>
+        <div class="mono">
+            <h1>Password Generator</h1>
+            <h3>By H.M.YOUSUF</h3>
+        </div>
+        <div class="box">
+            <div class="options">
+                <div class="min">
+                    <label for="minLength">Set Minimum Length:</label>
+                    <select id="minLength">
+                        <option value="6">6</option>
+                        <option value="8" selected>8</option>
+                        <option value="10">10</option>
+                        <option value="12">12</option>
+                        <option value="14">14</option>
+                        <option value="16">16</option>
+                        <option value="18">18</option>
+                        <option value="20">20</option>
+                    </select>
+                </div>
+                <div class="include">
+                    <label><input type="checkbox" id="includeUppercase" checked> Include Uppercase</label><br>
+                    <label><input type="checkbox" id="includeLowercase" checked> Include Lowercase</label><br>
+                    <label><input type="checkbox" id="includeNumbers" checked> Include Numbers</label><br>
+                    <label><input type="checkbox" id="includeSymbols" checked> Include Symbols</label>
+                </div>
+                <div class="button">
+                    <label for="">পাসওয়ার্ড কোথায় ব্যাবহার করবেন?</label>
+                    <input type="text" name="" id="whereUsePass">
+                </div>
+                <div class="button" id="make">Create a password</div>
+            </div>
+            <p id="text">Your Password is</p>
+            <div class="result">
+                <span class="randomText" id="random"></span>
+                <div class="copybtn" id="copy" title="Click to copy Password">
+                    <i class="fas fa-copy"></i>
+                </div>
+                <div class="copybtn" id="save" title="Click to save Password">
+                    <i class="fas fa-save"></i>
+                </div>
+            </div> 
+        </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
+    
