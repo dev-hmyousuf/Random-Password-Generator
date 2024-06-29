@@ -114,6 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
 
         try {
+            // Trigger the file picker dialog
             const fileHandle = await window.showSaveFilePicker({
                 suggestedName: 'password.png',
                 types: [{
@@ -129,6 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
             createToast('error', 'fa-solid fa-circle-exclamation', 'Error', 'Unable to save file');
         }
 
+        // Trigger a download as well
         const downloadLink = document.createElement('a');
         downloadLink.href = URL.createObjectURL(blob);
         downloadLink.download = 'password.png';
@@ -141,7 +143,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const textContent = `Password for: ${passwordFor}\nPassword: ${password}\nCreated on: ${timeString}`;
 
         const blob = new Blob([textContent], { type: 'text/plain' });
+
         try {
+            // Trigger the file picker dialog
             const fileHandle = await window.showSaveFilePicker({
                 suggestedName: 'password.txt',
                 types: [{
@@ -157,6 +161,7 @@ document.addEventListener('DOMContentLoaded', function() {
             createToast('error', 'fa-solid fa-circle-exclamation', 'Error', 'Unable to save file');
         }
 
+        // Trigger a download as well
         const downloadLink = document.createElement('a');
         downloadLink.href = URL.createObjectURL(blob);
         downloadLink.download = 'password.txt';
